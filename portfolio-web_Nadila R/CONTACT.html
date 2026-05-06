@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Contact Pro</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: radial-gradient(circle at top, #0a0f1c, #000);
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* NAVBAR */
+nav {
+  background: rgba(13,27,42,0.8);
+  padding: 15px;
+  box-shadow: 0 0 20px cyan;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+nav ul li { margin: 0 15px; }
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+/* CONTAINER */
+.container {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* TEXT ANIMATION */
+@keyframes neon {
+  0% { color: cyan; text-shadow: 0 0 10px cyan; }
+  50% { color: yellow; text-shadow: 0 0 20px yellow; }
+  100% { color: cyan; }
+}
+
+h1 {
+  animation: neon 2s infinite;
+}
+
+/* BOX */
+.contact-box {
+  background: rgba(0,0,0,0.6);
+  padding: 30px 50px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px cyan;
+}
+
+/* BUTTON */
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  animation: neon 2s infinite;
+}
+
+/* ⚡ PETIR SVG */
+.lightning {
+  position: fixed;
+  width: 100px;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* RANDOM EFFECT (pakai delay beda-beda) */
+.l1 { left: 20%; animation: flash 4s infinite; }
+.l2 { left: 70%; animation: flash 5s infinite 2s; }
+.l3 { left: 40%; animation: flash 6s infinite 1s; }
+
+/* PETIR SHAPE */
+.bolt {
+  fill: none;
+  stroke-width: 2;
+  animation: boltColor 2s infinite;
+}
+
+/* FLASH PETIR */
+@keyframes flash {
+  0% { opacity: 0; transform: scaleY(0.5); }
+  5% { opacity: 1; transform: scaleY(1.2); }
+  10% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* WARNA PETIR */
+@keyframes boltColor {
+  0% { stroke: cyan; filter: drop-shadow(0 0 10px cyan); }
+  50% { stroke: yellow; filter: drop-shadow(0 0 20px yellow); }
+  100% { stroke: white; filter: drop-shadow(0 0 25px white); }
+}
+
+/* ⚡ FLASH LAYAR */
+.flash {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: white;
+  opacity: 0;
+  pointer-events: none;
+  animation: screenFlash 6s infinite;
+}
+
+@keyframes screenFlash {
+  0% { opacity: 0; }
+  48% { opacity: 0; }
+  50% { opacity: 0.8; }
+  52% { opacity: 0; }
+  100% { opacity: 0; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- ⚡ FLASH SCREEN -->
+<div class="flash"></div>
+
+<!-- ⚡ PETIR -->
+<svg class="lightning l1" viewBox="0 0 100 300">
+  <polyline points="50,0 40,60 55,60 35,140 60,140 45,220 55,220 50,300" class="bolt"/>
+</svg>
+
+<svg class="lightning l2" viewBox="0 0 100 300">
+  <polyline points="50,0 40,60 55,60 35,140 60,140 45,220 55,220 50,300" class="bolt"/>
+</svg>
+
+<svg class="lightning l3" viewBox="0 0 100 300">
+  <polyline points="50,0 40,60 55,60 35,140 60,140 45,220 55,220 50,300" class="bolt"/>
+</svg>
+
+<!-- NAVBAR -->
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- CONTENT -->
+<section class="container">
+  <h1>⚡ Contact Me ⚡</h1>
+
+  <div class="contact-box">
+    <p><strong>Nama:</strong> Nadia Rumondor</p>
+    <p><strong>Email:</strong> zahraaar009@gmail.com</p>
+    <p><strong>Instagram:</strong> @zxbilla_0</p>
+
+    <button onclick="alert('Terima kasih sudah menghubungi!')">
+      Kirim Pesan
+    </button>
+  </div>
+</section>
+
+</body>
+</html>
